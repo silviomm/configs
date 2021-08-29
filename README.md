@@ -1,2 +1,2 @@
 # configs
-personal configuration for linux, zsh, vscode
+personal configuration for linux, zsh

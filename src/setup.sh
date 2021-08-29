@@ -4,6 +4,8 @@ sudo apt update
 
 # TOOLS
 sudo apt install -y git
+#git config --global user.name 
+#git config --global user.email ""
 sudo apt install -y curl
 
 # ZSH & OMZSH
