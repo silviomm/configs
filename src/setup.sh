@@ -28,9 +28,21 @@ sed -i 's/\(^plugins=([^)]*\)/\1 '"$plugins"'/' .zshrc
 
 # ZSH ALIAS
 echo "
+\n\
+# EXTRAS\n\
+alias wifi=\"sudo service network-manager restart\"\n\
+alias gtop=\"docker run --rm -it --name gtop --net=\"host\" --pid=\"host\" aksakalli/gtop\"\n\
+\n\
+# KUBERNETES\n\
 alias k=\"kubectl\"\n\
 alias kgp=\"kubectl get pods\"\n\
 alias kgpa=\"kubectl get pods --all-namespaces\"\n\
+\n\
+# TERRAFORM\n\
+alias tf=\"terraform\"\n\
+alias tfay=\"terraform apply -compact-warnings -auto-approve\"\n\
+alias tfdy=\"terraform destroy -compact-warnings -auto-approve\"\n\
+\n\
 " >> .zshrc
 
 # NVM
