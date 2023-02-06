@@ -1,8 +1,8 @@
 #!/bin/bash
 set -o xtrace
 
-DISC='silviommattos@gmail.com'
-KEY_PATH=~/.ssh/github_pessoal
+#DISC='email@mail.com'
+#KEY_PATH=~/.ssh/id_name_of_key
 
 ssh-keygen -f $KEY_PATH -t ed25519 -C $DISC
 ssh-add $KEY_PATH
