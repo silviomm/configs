@@ -24,6 +24,20 @@ THEME="robbyrussell"; sed -i '' "s/^ZSH_THEME=\".*\"$/ZSH_THEME=\"$THEME\"/g" ~/
 # 6. Check
 cat ~/.zshrc | grep plugins
 
+# 7. git config
+read -p "git name: " git_name
+read -p "git email: " git_email
+
+if [ -n "$git_name" ]; then
+    git config --global user.name "$git_name"
+    echo "✅ Nome de usuário configurado com sucesso!"
+fi
+
+if [ -n "$git_email" ]; then
+    git config --global user.email "$git_email"
+    echo "✅ E-mail configurado com sucesso!"
+fi
+
 chmod +x ./apps.sh
 chmod +x ./aliases.sh
 chmod +x ./ssh.sh
