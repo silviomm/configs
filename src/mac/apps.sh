@@ -16,6 +16,10 @@ CASKS=(
     "visual-studio-code"
     "google-chrome"
     "tabby"
+    "claude"
+    "antigravity"
+    "antigravity-cli"
+    "stremio"
 )
 
 # ==============================================================================
