@@ -8,7 +8,6 @@ ALIASES=(
     "gs='git status'"
     "gp='git pull'"
     "gc='git commit -m'"
-    "j=autojump"
 )
 
 ZSHRC="$HOME/.zshrc"
@@ -42,6 +41,21 @@ for alias_entry in "${ALIASES[@]}"; do
         echo "alias $alias_entry" >> "$ZSHRC"
     fi
 done
+
+# Install and configure autojump
+if ! command -v autojump &> /dev/null; then
+    echo "📦 Installing autojump via Homebrew..."
+    brew install autojump
+fi
+
+if ! grep -q "/opt/homebrew/share/autojump/autojump.zsh" "$ZSHRC"; then
+    echo "➕ Configuring autojump in ~/.zshrc..."
+    echo "" >> "$ZSHRC"
+    echo "unalias j 2>/dev/null" >> "$ZSHRC"
+    echo "[[ -s /opt/homebrew/share/autojump/autojump.zsh ]] && source /opt/homebrew/share/autojump/autojump.zsh" >> "$ZSHRC"
+else
+    echo "ℹ️  Autojump is already configured in ~/.zshrc. Skipping..."
+fi
 
 echo ""
 echo "✅ Aliases successfully configured in ~/.zshrc!"
